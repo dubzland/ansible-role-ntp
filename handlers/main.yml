@@ -1,2 +1,4 @@
 ---
-# handlers file for dubzland-ntp
+- name: restart ntp
+  service: ntp
+  state: restarted

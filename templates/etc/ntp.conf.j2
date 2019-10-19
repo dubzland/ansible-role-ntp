@@ -9,5 +9,5 @@ restrict default ignore
 restrict 127.0.0.1
 
 {% for subnet in ntp_allowed_subnets %}
-restrict {{ subnet | ipaddr('address') }} mask {{ subnet | ipaddr('netmask') }} limited kod nomodify nopeer notrap
+restrict {{ subnet | ipaddr('network') }} mask {{ subnet | ipaddr('netmask') }} limited kod nomodify nopeer notrap
 {% endfor %}

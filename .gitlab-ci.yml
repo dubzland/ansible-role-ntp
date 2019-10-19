@@ -12,5 +12,5 @@ before_script:
 build:
   stage: build
   script:
-    - docker build -t dubzland-ntp tests/
+    - docker build -t dubzland-ntp -f tests/Dockerfile .
     - docker run dubzland-ntp /usr/src/dubzland-ntp/tests/run_tests.sh

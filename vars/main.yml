@@ -1,0 +1,9 @@
+---
+ntp__base_packages:
+  - ntp
+ntp__default_server_pool:
+  - 0.gentoo.pool.ntp.org
+  - 1.gentoo.pool.ntp.org
+  - 2.gentoo.pool.ntp.org
+  - 3.gentoo.pool.ntp.org
+ntp__default_allowed_subnets: []

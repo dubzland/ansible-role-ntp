@@ -1,0 +1,12 @@
+---
+- name: ensure ntp is configured
+  template:
+    src: etc/ntp.conf.j2
+    dest: /etc/ntp.conf
+    owner: root
+    group: root
+    mode: 0660
+  notify:
+    - restart ntp
+  tags:
+    - ntp

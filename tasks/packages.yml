@@ -1,0 +1,8 @@
+---
+- name: ensure the required packages are installed
+  apt:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ ntp__base_packages }}"
+  tags:
+    - ntp

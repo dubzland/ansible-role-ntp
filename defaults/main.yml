@@ -1,0 +1,3 @@
+---
+ntp_server_pool: '{{ ntp__default_server_pool }}'
+ntp_allowed_subnets: '{{ ntp__default_allowed_subnets }}'

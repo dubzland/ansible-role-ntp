@@ -1,0 +1,13 @@
+image: docker:19.03.1
+
+services:
+  - docker:19.03.1
+
+before_script:
+  - docker info
+
+build:
+  stage: build
+  script:
+    - docker build -t dubzland-ntp tests/
+    - docker run dubzland-ntp /usr/src/dubzland-ntp/tests/run_tests.sh

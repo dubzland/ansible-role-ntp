@@ -3,3 +3,12 @@
   remote_user: root
   roles:
     - dubzland-ntp
+  tasks:
+    - name: grap ntp.conf
+      script: "cat /etc/ntp.conf"
+      register: ntp_conf
+    - name: dump ntp.conf
+      debug:
+        msg: "{{ ntp_conf.stdout }}"
+      when:
+        ntp_conf is defined

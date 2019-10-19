@@ -2,9 +2,14 @@
 - hosts: localhost
   remote_user: root
   roles:
-    - dubzland-ntp
+    - role: dubzland-ntp
+      vars:
+        ntp_allowed_subnets:
+          - 10.0.10.0/24
+          - 10.0.20.0/24
+          - 10.0.30.0/24
   tasks:
-    - name: grap ntp.conf
+    - name: grab ntp.conf
       command: /bin/cat /etc/ntp.conf
       register: ntp_conf
     - name: dump ntp.conf

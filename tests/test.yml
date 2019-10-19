@@ -9,6 +9,6 @@
       register: ntp_conf
     - name: dump ntp.conf
       debug:
-        msg: "{{ ntp_conf.stdout | quote }}"
+        msg: "{{ ntp_conf.stdout_lines | quote }}"
       when:
         ntp_conf is defined

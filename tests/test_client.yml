@@ -5,7 +5,7 @@
     - role: dubzland-ntp
       vars:
         ntp_server_pool:
-          - 10.0.10.1/24
+          - 10.0.10.1
   tasks:
     - name: grab ntp.conf
       command: /bin/cat /etc/ntp.conf

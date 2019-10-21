@@ -3,3 +3,9 @@ all:
   hosts:
     localhost:
       ansible_connection: local
+      dubzland_users_admins:
+        testadmin:
+          github_username: t3hpr1m3
+      dubzland_users:
+        testuser:
+          github_username: t3hpr1m3

@@ -7,6 +7,7 @@ driftfile /var/lib/ntp/ntp.drift
 restrict default kod nomodify notrap nopeer noquery
 
 restrict 127.0.0.1
+restrict ::1
 
 {% for subnet in ntp_allowed_subnets %}
 restrict {{ subnet | ipaddr('network') }} mask {{ subnet | ipaddr('netmask') }} limited kod nomodify nopeer notrap

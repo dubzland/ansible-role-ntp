@@ -1,7 +1,8 @@
 ---
 - name: ensure the required packages are installed
   apt:
-    name: "{{ ntp__base_packages }}"
+    name: "{{ dubzland_ntp_packages }}"
     state: present
+  notify: enable ntp
   tags:
     - ntp

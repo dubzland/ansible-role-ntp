@@ -1,9 +1,0 @@
----
-ntp__base_packages:
-  - ntp
-ntp__default_server_pool:
-  - 0.debian.pool.ntp.org
-  - 1.debian.pool.ntp.org
-  - 2.debian.pool.ntp.org
-  - 3.debian.pool.ntp.org
-ntp__default_allowed_subnets: []

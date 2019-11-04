@@ -1,38 +1,54 @@
-Dubzland: NTP
-=========
+# Dubzland: NTP
+[![Gitlab pipeline status (self-hosted)](https://img.shields.io/gitlab/pipeline/jdubz/dubzland-ntp?gitlab_url=https%3A%2F%2Fgit.dubzland.net)](https://git.dubzland.net/jdubz/dubzland-ntp/pipelines)
 
-A brief description of the role goes here.
+Installs and configures NTPD.
 
-Requirements
-------------
+## Requirements
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+Ansible version 2.0 or higher.
 
-Role Variables
---------------
+## Role Variables
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+Available variables are listed below, along with their default values (see
+    `defaults/main.yml` for more info):
 
-Dependencies
-------------
+## dubzland_ntp_server_pool
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+```yaml
+dubzland_ntp_server_pool:
+  - 0.debian.pool.ntp.org
+  - 1.debian.pool.ntp.org
+  - 2.debian.pool.ntp.org
+  - 3.debian.pool.ntp.org
+```
 
-Example Playbook
-----------------
+List of upstream ntp servers to sync with.
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+## dubzland_ntp_allowed_subnets
 
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
+```yaml
+dubzland_ntp_allowed_subnets: []
+```
 
-License
--------
+Subnets allowed to synchronize with this NTP instance.
 
-BSD
+## Dependencies
 
-Author Information
-------------------
+None
 
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+## Example Playbook
+
+```yaml
+- hosts: ntp-servers
+  become: yes
+  roles:
+  - role: dubzland-ntp
+```
+
+## License
+
+MIT
+
+## Author
+
+* [Josh Williams](https://codingprime.com)

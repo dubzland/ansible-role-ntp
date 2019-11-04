@@ -1,0 +1,4 @@
+---
+dubzland_ntp_packages:
+  - ntp
+dubzland_ntp_service_name: ntp

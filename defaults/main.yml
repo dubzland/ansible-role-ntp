@@ -1,3 +1,7 @@
 ---
-ntp_server_pool: '{{ ntp__default_server_pool }}'
-ntp_allowed_subnets: '{{ ntp__default_allowed_subnets }}'
+dubzland_ntp_server_pool:
+  - 0.debian.pool.ntp.org
+  - 1.debian.pool.ntp.org
+  - 2.debian.pool.ntp.org
+  - 3.debian.pool.ntp.org
+dubzland_ntp_allowed_subnets: []

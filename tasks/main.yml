@@ -1,3 +1,11 @@
 ---
-- import_tasks: packages.yml
-- import_tasks: configuration.yml
+- include_tasks: variables.yml
+- include_tasks: packages.yml
+- include_tasks: configuration.yml
+
+- meta: flush_handlers
+
+- name: ensure ntp is running
+  service:
+    name: "{{ dubzland_ntp_service_name }}"
+    state: started

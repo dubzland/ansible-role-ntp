@@ -1,4 +1,4 @@
-{% for server in ntp_server_pool %}
+{% for server in dubzland_ntp_server_pool %}
 server {{ server }}
 {% endfor %}
 
@@ -9,6 +9,6 @@ restrict default kod nomodify notrap nopeer noquery
 restrict 127.0.0.1
 restrict ::1
 
-{% for subnet in ntp_allowed_subnets %}
+{% for subnet in dubzland_ntp_allowed_subnets %}
 restrict {{ subnet | ipaddr('network') }} mask {{ subnet | ipaddr('netmask') }} limited kod nomodify nopeer notrap
 {% endfor %}

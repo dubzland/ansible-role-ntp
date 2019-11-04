@@ -1,5 +1,9 @@
 ---
+- name: enable ntp
+  service:
+    name: "{{ dubzland_ntp_service_name }}"
+    enabled: True
 - name: restart ntp
   service:
-    name: ntp
+    name: "{{ dubzland_ntp_service_name }}"
     state: restarted

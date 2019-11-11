@@ -1,9 +1,5 @@
 ---
 - name: Converge
   hosts: all
-  pre_tasks:
-    - name: update the apt cache
-      package:
-        update_cache: true
   roles:
     - role: dubzland-ntp

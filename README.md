@@ -1,5 +1,5 @@
 # Dubzland: NTP
-[![Gitlab pipeline status (self-hosted)](https://img.shields.io/gitlab/pipeline/jdubz/dubzland-ntp?gitlab_url=https%3A%2F%2Fgit.dubzland.net)](https://git.dubzland.net/jdubz/dubzland-ntp/pipelines)
+[![Gitlab pipeline status (self-hosted)](https://git.dubzland.net/dubzland/ansible-role-ntp/badges/master/pipeline.svg)](https://git.dubzland.net/dubzland/ansible-role-ntp)
 
 Installs and configures NTPD.
 
@@ -42,7 +42,7 @@ None
 - hosts: ntp-servers
   become: yes
   roles:
-  - role: dubzland-ntp
+  - role: dubzland.ntp
 ```
 
 ## License
